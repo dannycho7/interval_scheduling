@@ -45,7 +45,8 @@ def find_opt_sched(intervals_in):
 	current_int_i = len(prev_interval) - 1
 	while current_int_i != 0:
 		if used_for_opt[current_int_i]:
-			reverse_print_buf.append(intervals[current_int_i])
+			start_time, end_time, payoff = intervals[current_int_i]
+			reverse_print_buf.append("{0} {1} {2}".format(start_time, end_time, payoff))
 		current_int_i = prev_interval[current_int_i]
 
 	for i in range(0, len(reverse_print_buf)):
